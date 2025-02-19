@@ -3,7 +3,7 @@ import axios from "axios";
 import { toast } from 'react-toastify'
 import Spinner from '../components/Spinner'
 
-const API_URL = '/api/field'
+const API_URL = 'http://ec2-51-20-70-65.eu-north-1.compute.amazonaws.com:5000/api/field'
 
 const initialState = {
     fields: []
