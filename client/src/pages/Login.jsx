@@ -32,6 +32,7 @@ const Login = () => {
         try{
             const res = await axios.post('/login', formData);
             await localStorage.setItem('token', res.data.token);
+            
             navigate('/');
         } catch(error){
             toast.error("Invalid credentials")

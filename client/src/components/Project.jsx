@@ -62,7 +62,7 @@ const Project = () => {
             }
             <div className="container smallBtn">
               <button onClick = {addProjects} 
-              disabled = { projects.length > 0 && (!projects[projects.length-1]?.title || !projects[projects.length-1]?.num) }  >
+              disabled = { projects && projects.length > 0 && (!projects[projects.length-1]?.title || !projects[projects.length-1]?.num) }  >
                 <MdAdd />
                 Add
               </button>

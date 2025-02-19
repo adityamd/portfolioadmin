@@ -57,7 +57,7 @@ const Navlinks = () => {
             }
             <div className="container smallBtn">
               <button onClick = {addNavLink} 
-              disabled = { navLinks.length > 0 && (!navLinks[navLinks.length-1]?.url || !navLinks[navLinks.length-1]?.text) }  >
+              disabled = { navLinks && navLinks.length > 0 && (!navLinks[navLinks.length-1]?.url || !navLinks[navLinks.length-1]?.text) }  >
                 <MdAdd />
                 Add
               </button>

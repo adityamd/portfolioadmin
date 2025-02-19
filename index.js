@@ -45,14 +45,6 @@ app.use(express.json({ extended: false }))
 app.use(cors(corsOptions));
 app.post('/login', login)
 // app.post('/register', register)
-app.use((req, res, next) => {
-    if(!req.session || !req.session.clientId){
-        const err = new Error("Not authenticated.");
-        err.statusCode = 401;
-        next(err)
-    }
-    next();
-})
 app.use('/api/field', router)
 app.get('/s3/url/:name', async (req, res) => {
     console.log(req.params.name)

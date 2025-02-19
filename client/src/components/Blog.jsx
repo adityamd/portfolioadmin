@@ -68,7 +68,7 @@ const Blog = () => {
             }
             <div className="container smallBtn">
               <button onClick = {addBlog} 
-              disabled = { blogs.length > 0 && (!blogs[blogs.length-1]?.title || !blogs[blogs.length-1]?.desc || !blogs[blogs.length-1]?.author
+              disabled = { blogs && blogs.length > 0 && (!blogs[blogs.length-1]?.title || !blogs[blogs.length-1]?.desc || !blogs[blogs.length-1]?.author
                 || !blogs[blogs.length-1]?.date  || !blogs[blogs.length-1]?.cover
               ) }  >
                 <MdAdd />

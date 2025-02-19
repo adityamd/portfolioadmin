@@ -26,20 +26,19 @@ export const FieldProvider = ({ children }) => {
         social: []
     })
 
-    useEffect( () => {
-        // getData()
-    }, [])
-
     const [isLoading, setIsLoading] = useState(false);
 
     const [id, setId] = useState()
     
     const getData = async () => {
-        const data = await axios.get(API_URL);
-        setId(data.data[0]._id);
-        setField(data.data[0].allFields);
-        setIsLoading(false);
-        console.log(data.data[0])
+        if(!id){
+            setIsLoading(true);
+            const data = await axios.get(API_URL);
+            setId(data.data[0]._id);
+            setField(data.data[0].allFields);
+            setIsLoading(false);
+            console.log(data.data[0])
+        }
     }
 
     const updateData = async (e) => {

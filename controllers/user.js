@@ -41,7 +41,7 @@ const login = asyncHandler(async (req, res) => {
     if(user && (await bcrypt.compare(password, user.password))){
         req.session.clientId = 'abc12345';
         req.session.myNum = 5;
-        res.status(201).json({message: "user loggged in"})
+        res.status(201).json({message: "user loggged in", token: generateToken(user._id)})
     } else {
         res.status(400).send({
             message: "Invalid credentials"

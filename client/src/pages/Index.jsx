@@ -15,7 +15,7 @@ import Header from '../components/Header.jsx';
 
 const Index = () => {
     
-    const { getData, updateData } = useContext(FieldContext)
+    const { getData, updateData, field } = useContext(FieldContext)
 
     useEffect( () => {
         getData();
